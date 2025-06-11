@@ -1,0 +1,263 @@
+{
+	map		"mp_backlot"
+	longname	"MPUI_BACKLOT"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_bloc"
+	longname	"MPUI_BLOC"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_bog"
+	longname	"MPUI_BOG"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_broadcast"
+	longname	"BTDZ_BROADCAST"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_carentan"
+	longname	"BTDZ_CARENTAN"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_cargoship"
+	longname	"MPUI_CARGOSHIP"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_convoy"
+	longname	"MPUI_CONVOY"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_countdown"
+	longname	"MPUI_COUNTDOWN"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_crash"
+	longname	"MPUI_CRASH"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_crash_snow"
+	longname	"BTDZ_CRASH_SNOW"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_creek"
+	longname	"BTDZ_CREEK"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_ctan"
+	longname	"BTDZ_CTAN"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_farm"
+	longname	"MPUI_FARM"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_killhouse"
+	longname	"BTDZ_KILLHOUSE"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_overgrown"
+	longname	"MPUI_OVERGROWN"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_pipeline"
+	longname	"MPUI_PIPELINE"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_shipment"
+	longname	"MPUI_SHIPMENT"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_showdown"
+	longname	"MPUI_SHOWDOWN"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_strike"
+	longname	"MPUI_STRIKE"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_vacant"
+	longname	"MPUI_VACANT"
+	gametype	"elim ons sur war"
+}
+
+{
+	map		"mp_aerodrome"
+	longname	"BTDZ_AERODROME"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_al_jabal"
+	longname	"BTDZ_AL_JABAL"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_ancient"
+	longname	"BTDZ_ANCIENT"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_asylum"
+	longname	"BTDZ_ASYLUM"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_ava_crossroads"
+	longname	"BTDZ_AVA_CROSSROADS"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_blast"
+	longname	"BTDZ_BLAST"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_bridge"
+	longname	"BTDZ_BRIDGE"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_castlewars_v3"
+	longname	"BTDZ_CASTLEWARS_V3"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_daybreak"
+	longname	"BTDZ_DAYBREAK"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_forlorn"
+	longname	"BTDZ_FORLORN"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_hhk_ballroom"
+	longname	"BTDZ_HHK_BALLROOM"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_highrise"
+	longname	"BTDZ_HIGHRISE"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_kk_arena"
+	longname	"BTDZ_KK_ARENA"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_laugh"
+	longname	"BTDZ_LAUGH"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_lpost"
+	longname	"BTDZ_LPOST"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_pillar"
+	longname	"BTDZ_PILLAR"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_pillar"
+	longname	"BTDZ_PILLAR"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_prunis"
+	longname	"BTDZ_PRUNIS"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_sbase"
+	longname	"BTDZ_SBASE"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_scrap"
+	longname	"BTDZ_SCRAP"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_shipment2"
+	longname	"BTDZ_SHIPMENT2"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_simpsons"
+	longname	"BTDZ_SIMPSONS"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_stargate_abydos"
+	longname	"BTDZ_STARGATE_ABYDOS"
+	gametype	"elim ons sur"
+}
+
+{
+	map		"mp_v2_b1"
+	longname	"BTDZ_V2_B1"
+	gametype	"elim ons sur"
+}

@@ -1,0 +1,116 @@
+,,"If the first column for a row is blank, then the row is ignored"
+,"If the first column for a row is blank, then the row is ignored",
+# The first non-comment line of a sound alias file specifies the key name for all values appearing in this column.,,
+"# This means it is safe to swap entire columns around, though you should never swap partial columns.",,
+"# You can invent new keys, but the game will ignore them if it doesn't know about them.",,
+"# You can leave out keys, but the ""name"" and ""file"" keys must always be present.",,
+
+,name,name of the alias that is used to play this sound (required)
+,sequence,"used to uniquely identify alias entries when more than one sound goes to an alias, used only to catch unwanted duplicates (default = 0)"
+,file,the name of the file that contains the sound data (required)
+,vol_min,"0 is silent, 1 is full volume (default = 1)"
+,vol_max,"0 is silent, 1 is full volume (default = same as vol_min)"
+,vol_mod,"blank causes no effect on vol_min and vol_max, otherwise the string must match a string in the volumemodgroups.def file and the value in that file corresponding to that string will be used to adjust vol_min and vol_max, clamped to the valid range"
+,pitch_min,"1 is normal playback, 2 is twice as fast, 0.5 is half as fast (default = 1)"
+,pitch_max,"1 is normal playback, 2 is twice as fast, 0.5 is half as fast (default = same as pitch_min)"
+,dist_min,"within this distance in inches, the sound is always full volume (default = 120)"
+,dist_max,"outside this distance in inches, the sound is not started.  If left blank or set to 0, the sound will play from any distance.  This does not affect sound volume falloff."
+,channel,"auto, menu, weapon, voice, item, body, local, music, announcer (default = auto)"
+,type,primed (a streamed sound which gets primed on some platforms) / streamed / loaded (default = loaded)
+,probability,weight to use for the weighted probability of playing this sound instead of another sound (default = 1)
+,loop,"whether this sound is ""looping"" or ""nonlooping"" (default = ""nonlooping"")"
+,masterslave,"if ""master"", this is a master sound.  If a number, then this sound's volume will be multiplied by that number (a percentage between 0 and 1) any master sound is playing.  If blank, then neither master nor slave."
+,loadspec,"space-separated list of which maps should use this alias; eg, ""burnville dawnville"".  If blank, the alias is used on all maps."
+,compression,"a string corresponding to an entry in ""XMAUpdate.tbl"" which is used to determine compression by XMAUpdate.exe"
+,secondaryaliasname,"defined the name of an additional sound alias to play in addition to the current alias being played. Note that it is an error for the secondaryalias to also define a secondaryaliasname (eg, if B is a secondaryalias of A, B is not allowed to have its own secondaryalias)."
+,volumefalloffcurve,if blank uses the linear curve which can not be changed. A string 'XXXX' corresponds to the curve defined by the file 'soundaliases/XXXX.vfcurve'
+,startdelay,defaults to no delay. The value is the number of milliseconds to delay starting the sound by
+,speakermap,if blank uses the default speakermappings which cannot be changed. A string 'XXXX' corresponds to the speakermap defined by the file 'soundaliases/XXXX.spkrmap'. 
+,reverb,"blank means the alias is affected normally by wet and dry levels, ""fulldrylevel"" forces the alias to use a full drylevel (ignoring the global drylevel), ""nowetlevel"" forces the alias to use no wetlevel (ignoring the global wetlevel)"
+,lfe percentage,this determines what percentage of the highest calculated spatialized speaker volume should be passed to the LFE. blank means no LFE for the sound
+,center percentage,this determines what percentage of the volume should be redirected to the center channel (equal percentage taken from all speakers).
+,platform,"used by XMAUpdate to determine whether the alias should be processed for a particular platform.  If blank, process for all platforms.  Platforms are PC, XB, PS, WI.  Multiple values should be separated by spaces.  !PC will exclude alias from PC but include in all other platforms.  PC will only include alias for PC.  !PC XB is invalid."
+,envelop_min,any sounds within this distance of the listener will use the full envelop percentage,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,envelop_max,sounds between enevlop_min and envelop_max use a fraction of the envelop percentage,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,envelop percentage,amount of omnidirectionality to apply,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage,conversion
+
+gib,1,btd_sounds/gib_01.wav,0.9,1,,0.9,1,100,1500,auto,,,,,,,,,,,,,,,,,,,
+gib,2,btd_sounds/gib_02.wav,0.9,1,,0.9,1,100,1500,auto,,,,,,,,,,,,,,,,,,,
+gib,3,btd_sounds/gib_03.wav,0.9,1,,0.9,1,100,1500,auto,,,,,,,,,,,,,,,,,,,
+
+gib_imp,1,btd_sounds/gib_imp1.wav,0.9,1,,0.9,1,100,700,auto,,,,,,,,,,,,,,,,,,,
+gib_imp,2,btd_sounds/gib_imp2.wav,0.9,1,,0.9,1,100,700,auto,,,,,,,,,,,,,,,,,,,
+gib_imp,3,btd_sounds/gib_imp3.wav,0.9,1,,0.9,1,100,700,auto,,,,,,,,,,,,,,,,,,,
+gib_imp,4,btd_sounds/gib_splt1.wav,0.9,1,,0.9,1,100,700,auto,,,,,,,,,,,,,,,,,,,
+
+zombie_moan_0,0,btd_sounds/zom1.wav,1,1,reactional,1,1,100,1500,auto
+zombie_moan_1,1,btd_sounds/zom2.wav,1,1,reactional,1,1,100,1500,auto
+zombie_moan_2,2,btd_sounds/zom3.wav,1,1,reactional,1,1,100,1500,auto
+zombie_moan_3,3,btd_sounds/zom4.wav,1,1,reactional,1,1,100,1500,auto
+zombie_moan_4,4,btd_sounds/zom5.wav,1,1,reactional,1,1,100,1500,auto
+zombie_moan_5,5,btd_sounds/zom6.wav,1,1,reactional,1,1,100,1500,auto
+zombie_moan_6,6,btd_sounds/zom7.wav,1,1,reactional,1,1,100,1500,auto
+
+zombie_kill_0,0,btd_sounds/zom_death1.wav,1,1,reactionax,1,1,100,1200,auto
+zombie_kill_1,1,btd_sounds/zom_death2.wav,1,1,reactionax,1,1,100,1200,auto
+zombie_kill_2,2,btd_sounds/zom_death3.wav,1,1,reactionax,1,1,100,1200,auto
+zombie_kill_3,3,btd_sounds/zom_death4.wav,1,1,reactionax,1,1,100,1200,auto
+
+zom_pain_0,0,btd_sounds/pain/zom_pain1.wav,0.9,1,impactmp,1,1,100,1200,auto
+zom_pain_1,1,btd_sounds/pain/zom_pain2.wav,0.9,1,impactmp,1,1,100,1200,auto
+zom_pain_2,2,btd_sounds/pain/zom_pain3.wav,0.9,1,impactmp,1,1,100,1200,auto
+
+zom_attack_0,0,btd_sounds/attack/attackMale01.wav,1,1,wpnai,1,1,100,700,auto
+zom_attack_1,1,btd_sounds/attack/attackMale02.wav,1,1,wpnai,1,1,100,700,auto
+zom_attack_2,2,btd_sounds/attack/attackMale03.wav,1,1,wpnai,1,1,100,700,auto
+
+killingspree,,btd_sounds/ut3/killingspree.wav,1,1,voiceover,1,1,10000,20000,auto
+rampage,,btd_sounds/ut3/rampage.wav,1,1,voiceover,1,1,10000,20000,auto
+dominating,,btd_sounds/ut3/dominating.wav,1,1,voiceover,1,1,10000,20000,auto
+unstoppable,,btd_sounds/ut3/unstoppable.wav,1,1,voiceover,1,1,10000,20000,auto
+slaughter,,btd_sounds/ut3/manslaughter.wav,1,1,voiceover,1,1,10000,20000,auto
+monster,,btd_sounds/ut3/monsterkill.wav,1,1,voiceover,1,1,10000,20000,auto
+holyshit,,btd_sounds/ut3/megakill.wav,1,1,voiceover,1,1,10000,20000,auto
+godlike,,btd_sounds/ut3/godlike.wav,1,1,voiceover,1,1,10000,20000,auto
+
+headshot,,btd_sounds/ut3/headshot.wav,1,1,voiceover,1,1,10000,20000,auto
+headhunter,,btd_sounds/ut3/headhunter.wav,1,1,voiceover,1,1,10000,20000,auto
+bullseye,,btd_sounds/ut3/bullseye.wav,1,1,voiceover,1,1,10000,20000,auto
+multikill,,btd_sounds/ut3/multikill.wav,1,1,voiceover,1,1,10000,20000,auto
+bossarrive,,btd_sounds/here_comes_trouble.wav,1,1,voiceover,1,1,10000,20000,auto
+
+perk_award,,btd_sounds/perk_award.wav,1,1,max,1,1,10000,20000,auto
+killstreak_won,,btd_sounds/kill_streak_won.wav,1,1,max,1,1,10000,20000,auto
+killstreak_lost,,btd_sounds/kill_streak_lost.wav,1,1,max,1,1,10000,20000,auto
+menu_error,,btd_sounds/error.wav,1,1,max,1,1,500,1000,auto
+ammo_impact,,btd_sounds/ammo_land.wav,0.9,1,impactmp,1,1,600,1200,auto
+
+zom_track_cust_0,0,music/track_1.mp3,1,1,impactmp,1,1,6000,0,musicnopause,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+zom_track_cust_1,1,music/track_2.mp3,1,1,impactmp,1,1,6000,0,musicnopause,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+zom_track_cust_2,2,music/track_3.mp3,1,1,impactmp,1,1,6000,0,musicnopause,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+zom_track_cust_3,3,music/track_4.mp3,1,1,impactmp,1,1,6000,0,musicnopause,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+zom_track_cust_4,4,music/track_5.mp3,1,1,impactmp,1,1,6000,0,musicnopause,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+zom_track_cust_5,5,music/track_6.mp3,1,1,impactmp,1,1,6000,0,musicnopause,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+zom_track_cust_6,6,music/track_7.mp3,1,1,impactmp,1,1,6000,0,musicnopause,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+zom_track_cust_7,7,music/track_8.mp3,1,1,impactmp,1,1,6000,0,musicnopause,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+
+woz_strike,,btd_sounds/tele_spark_hit.wav,0.85,0.99,element,1,1,100000,0,element
+
+trade_dupe,,btd_sounds/trader/duplicate_weapon.wav,1,1,voiceover,1,1,10000,20000,auto
+trade_no_money,,btd_sounds/trader/insufficient_funds.wav,1,1,voiceover,1,1,10000,20000,auto
+trade_fail,,btd_sounds/trader/purchase_failed.wav,1,1,voiceover,1,1,10000,20000,auto
+trade_made,,btd_sounds/trader/purchase_successful.wav,1,1,voiceover,1,1,10000,20000,auto
+sale_made,,btd_sounds/trader/sale_successful.wav,1,1,voiceover,1,1,10000,20000,auto
+
+ac130_25mm_fire,,ac130/ac130_25mm_fire.wav,0.8,,wpnai,,,100,500,weapon2d,,,,0.9,all_mp,,,,,,,,0.5
+ac130_40mm_fire,,ac130/ac130_40mm_fire.wav,0.8,,wpnai,,,100,500,weapon2d,,,,0.9,all_mp,,,ac130_40mm_reload,,,,,0.5
+ac130_105mm_fire,,ac130/ac130_105mm_fire.wav,0.8,,wpnai,,,100,500,weapon2d,,,,0.9,all_mp,,,ac130_105mm_reload,,,,,0.65
+ac130_40mm_reload,,ac130/ac130_40mm_reload.wav,1,,wpnai,,,100,500,reload2d,,,,0.9,all_mp,,,,,1000,,,
+ac130_105mm_reload,,ac130/ac130_105mm_reload.wav,1,,wpnai,,,100,500,reload2d,,,,0.9,all_mp,,,,,2000,,,
+
+air_raid_siren,,amb_emitters/emt_icmb_missile_alarm.wav,1,1,max,1,1,8000,10000,auto2d,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+nuke_impact,,level/airlift_nuclear_aftmath.wav,1,1,max,1,1,8000,10000,auto,streamed,,,,all_mp,,,,,,,,,,,,,
+nuke_explode,,level/airlift_nuclear_exp.wav,1,1,max,1,1,8000,10000,auto,streamed,,,master,all_mp,,,,,,,,,,,,,
+
