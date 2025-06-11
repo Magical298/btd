@@ -1,0 +1,377 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			175 //204 //180
+
+#define CHOICE_GROUP			"class"
+#define CHOICE_SEP_1			4
+#define CHOICE_SEP_2			7
+
+#include "ui_mp/menustyle.inc"
+#include "ui_mp/choices_setup_teams.menu"
+
+#define ORIGIN_DESCRIPTION		(CHOICE_X_START + 15) 190
+
+{
+	menuDef
+	{
+		name			"class"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		7.0
+		onOpen
+		{
+			focusFirst;
+			scriptMenuResponse "startmotd";
+		}
+		onEsc 
+		{
+			scriptMenuResponse "back";
+		}
+		
+		#ifndef PC
+		execkeyint BUTTON_START
+		{
+			scriptMenuResponse "back";
+		}
+		#endif
+		
+		// background overlay
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.75 //0 0.05 0.15 0.5
+			visible			1
+			decoration
+		}
+
+		// gradient_top
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+
+		// gradient_bottom
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 405 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+		
+		// map display ================================================
+		#include "ui_mp/tactical_map.inc";
+		#define ORIGIN_BANNER		108 48
+
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_BANNER 400 0.5
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_BANNER 340 10
+			origin			30 1
+			background		"line_horizontal"
+			forecolor		OBJECTIVE_COLOR_MARINES
+			visible			1
+			decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_BANNER 400 0.5
+			origin			0 12
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	}
+			
+		itemDef	{
+			rect			-400 64 800 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			forecolor		1 1 1 0.85
+			exp text ( gametypename() );
+			visible			1	decoration	}
+		itemDef	{
+			rect			-250 84 500 60 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textalign		ITEM_ALIGN_CENTER
+			forecolor		1 1 1 0.75
+			exp text( gametypedescription() );
+			autowrapped
+			visible			1	decoration	}
+		
+		// ------------------ TREE TITLE ------------------
+		
+		CHOICE_MENU_TITLE( "@MENU_OPTIONS_UPPER_CASE" )
+		
+		// ------------------ buttons ---------------------
+		#define BACK_OPEN	;
+		#include "ui_mp/navcontrols.inc"
+
+		//=========================================================
+		//===================== MENU SELECTION ====================
+		//=========================================================
+		#include "ui_mp/teamicon.inc"
+
+		// PC widescreen fix
+		#undef  CHOICE_X_START
+		#define CHOICE_X_START	-320
+		
+		#undef	CHOICE_HORIZONTAL_ALIGN
+		#define CHOICE_HORIZONTAL_ALIGN HORIZONTAL_ALIGN_CENTER
+
+		CHOICE_BUTTON( 1, "Open BTDz Menu", close self; open quickmessage; )
+		
+		CHOICE_BUTTON_BG( 2, when( (TEAM_IS_MARINES || TEAM_IS_OPFOR) && MAY_CHOOSE_CLASS ) )
+		CHOICE_HIGHLIGHT( 2, (TEAM_IS_MARINES || TEAM_IS_OPFOR) && MAY_CHOOSE_CLASS )
+		CHOICE_BUTTON_VIS_NOHI( 2, "@MPUI_CHOOSE_CLASS", scriptMenuResponse "changeclass_marines", when( TEAM_IS_MARINES && MAY_CHOOSE_CLASS ) )
+		CHOICE_BUTTON_VIS_NOHI( 2, "@MPUI_CHOOSE_CLASS", scriptMenuResponse "changeclass_opfor", when( TEAM_IS_OPFOR && MAY_CHOOSE_CLASS ) )
+		CHOICE_DBUTTON_VIS( 2, "@MPUI_CHOOSE_CLASS", when( dvarInt( scr_oldschool ) == 1 ); )
+		
+		CHOICE_BUTTON( 3, "@MPUI_CHANGE_TEAM", scriptMenuResponse "changeteam"; )
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )
+
+		CHOICE_BUTTON( 4, "@MENU_CONTROLS", close self; open main_controls )
+		CHOICE_BUTTON( 5, "@MENU_OPTIONS", close self; open main_options; execnow "set ui_allow_graphic_change 0"; )
+		
+		CHOICE_BUTTON_VIS( 6, "@MPUI_CALL_VOTE", open callvote; close self;, when( dvarbool( ui_allowvote ) ); )
+		CHOICE_DBUTTON_VIS( 6, "@MPUI_CALL_VOTE", when( !dvarbool( ui_allowvote ) ); )
+		
+		CHOICE_BUTTON( 7, "@MPUI_MUTE_PLAYERS", open muteplayer; close self; )
+		
+		CHOICE_BUTTON_BG( 8, 1 )
+		CHOICE_HIGHLIGHT( 8, 1 )
+		CHOICE_BUTTON_VIS_NOHI( 8, "@MENU_LEAVE_GAME", open popup_endgame, when( dvarbool( sv_running ) ) )
+		CHOICE_BUTTON_VIS_NOHI( 8, "@MENU_LEAVE_GAME", open popup_leavegame, when( !dvarbool( sv_running ) ) )
+
+		CHOICE_SEPARATOR( CHOICE_SEP_2 )
+
+		CHOICE_BUTTON_VIS( 9, "@BTDZ_SERVER_INFORMATION",  close self; open serverinfo;, when( dvarbool( ui_server_info ) ) )
+		CHOICE_DBUTTON_VIS( 9, "@BTDZ_SERVER_INFORMATION", when( !dvarbool( ui_server_info ) ) )
+		CHOICE_BUTTON_VIS( 10, "@BTDZ_FAVORITE_ADD", uiScript CreateFavorite; open createfavorite_popmenu; , when( dvarbool( ui_btdz_addfavorite ) ) )
+
+		#include "ui/safearea.menu"
+	}
+}
+
+
+	// CREATE FAVORITE POPUP MENU \\
+	menuDef 
+	{
+		name				"createfavorite_popmenu"
+		visible				0
+		fullscreen			0
+		rect				120 190 404 235
+		focusColor COLOR_FOCUSED
+		style				1
+		border				1
+		popup
+		onESC				{ close createfavorite_popmenu }
+
+		itemDef
+		{
+			name			window
+			group			grpControlbutton
+			rect			0 40 404 135
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		.5 .5 .5 .5
+			forecolor		1 1 1 1
+			backcolor		.1 .1 .1 1
+			visible			1
+			decoration
+		}
+
+		itemDef 
+		{
+			name			window2
+			group			grpControlbutton
+			rect			2 42 400 20 
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		.1 .1 .1 .2
+			forecolor		1 1 1 1
+			backcolor		.3 0.5 0.2 0.5
+			visible			1
+			decoration
+		}
+
+		itemDef 
+		{
+			name			window_title
+			text			"@MENU_NEW_FAVORITE"
+			style			0
+			decoration
+			textscale		.3
+			rect			85 44 110 20
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		62
+			textaligny		14
+			forecolor		1 1 1 1
+			visible			1
+		}
+
+		// ENTER NAME AND ADDRESS	//
+		itemDef 
+		{
+			name			nameEntry
+			group			grpControls
+			TYPE			4
+			text			"@MENU_NAME1"
+			dvar			"ui_favoriteName"
+			rect			30 75 344 12
+			maxchars		30
+			textalign		ITEM_ALIGN_MIDDLE_LEFT
+			textaligny		-2
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			mouseenter		{ show keyBindStatus; play "mouse_over" }
+			mouseexit		{ hide keyBindStatus }
+		}
+
+		itemDef 
+		{
+			name			nameEntry
+			group			grpControls
+			TYPE			4
+			text			"@MENU_IP_ADDRESS"
+			dvar			"ui_favoriteAddress"
+			rect			30 90 344 12
+			textalign		ITEM_ALIGN_MIDDLE_LEFT
+			textaligny		-2
+			maxchars		30
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			mouseenter		{ show keyBindStatus; play "mouse_over" }
+			mouseexit		{ hide keyBindStatus }
+		}
+
+		itemDef 
+		{
+			name			yes
+			text			"@MENU_OK"
+			type			ITEM_TYPE_BUTTON
+			textfont		UI_FONT_NORMAL
+			textscale		0.25
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			style			WINDOW_STYLE_FILLED
+			rect			95 150 100 15
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		11
+			forecolor		.9 .9 .95 1
+			visible			1
+			action 
+			{
+				play		"mouse_click" ;
+				uiScript	CreateFavorite ;
+				close		createfavorite_popmenu ;
+				open		fav_message_popmenu
+			}
+			mouseEnter	{ play "mouse_over"; }
+		}
+		itemDef 
+		{
+			name			cancel
+			text			"@MENU_CANCEL"
+			type			ITEM_TYPE_BUTTON
+			textfont		UI_FONT_NORMAL
+			textscale		0.25
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			style			WINDOW_STYLE_FILLED
+			rect			210 150 100 15
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		11
+			forecolor		.9 .9 .95 1
+			visible			1
+			action 
+			{
+				play		"mouse_click" ;
+				uiScript	CreateFavorite ;
+				close		createfavorite_popmenu
+			}
+			mouseEnter	{ play "mouse_over"; }
+		}
+	}
+	menuDef 
+	{
+		name 			fav_message_popmenu
+		visible 		0
+		fullscreen 		0
+		rect 			200 220 250 80
+		focusColor 		1 1 1 1
+		backcolor 		.1 .15 .1 1
+		border 			1
+		bordercolor 	.5 .5 .5 .5
+		style 			WINDOW_STYLE_FILLED
+		popup
+		onESC    	
+		{
+			close fav_message_popmenu;
+		}
+
+		itemDef 
+		{
+			name 			fav_msg
+			dvar 			"ui_favorite_message"
+			style 			0
+			textscale 		.24
+			textstyle 		3
+			rect 			0 0 240 60
+			textalign 		ITEM_ALIGN_CENTER
+			textalignx 		5
+			textaligny 		20
+			decoration
+			forecolor 		1 1 1 1
+			visible 		1
+		}
+
+		itemDef 
+		{
+			name 			fav_msg_ok
+			text 			"@MENU_OK"
+			type 			1
+			textfont 		UI_FONT_NORMAL
+			textscale 		.25
+			textstyle  		ITEM_TEXTSTYLE_SHADOWED
+			style      		WINDOW_STYLE_FILLED
+			rect 			100 35 45 24
+			textalign 		ITEM_ALIGN_CENTER
+			textalignx 		-1
+			textaligny 		16
+			border         	1
+			bordercolor    .5 .5 .5 .5
+			backcolor      .1 .15 .1 1
+			forecolor      .9 .9 .95 1
+			visible 		1
+			action    
+			{ 
+				play "mouse_click"; 
+				close fav_message_popmenu;
+			}
+			mouseEnter { play "mouse_over" }   
+		}
+	}
+}
