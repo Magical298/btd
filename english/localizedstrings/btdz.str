@@ -1,0 +1,208 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           CONNECTED
+LANG_ENGLISH        "^3&&1 ^7has come to kill some Zombies."
+
+REFERENCE           MOTD
+LANG_ENGLISH        "SERVER MESSAGE"
+
+REFERENCE           FAVORITE_ADD
+LANG_ENGLISH        "Make Favorite Server"
+
+REFERENCE           SERVER_INFORMATION
+LANG_ENGLISH        "Server Info"
+
+REFERENCE           ALLIES
+LANG_ENGLISH        "Humans"
+
+REFERENCE           AXIS
+LANG_ENGLISH        "Zombies"
+
+REFERENCE           EARNED_RAMPAGE
+LANG_ENGLISH        "Press [{+actionslot 4}] to go on a RAMPAGE"
+
+REFERENCE           EARNED_ARTY
+LANG_ENGLISH        "Press [{mp_QuickMessage}] 3 3 for ARTILLERY."
+
+REFERENCE           EARNED_BLACKHAWK
+LANG_ENGLISH        "Press [{+actionslot 4}] for BLACKHAWK."
+
+REFERENCE           EARNED_NAPALM
+LANG_ENGLISH        "Press [{+actionslot 4}] for a NAPALM STRIKE."
+
+REFERENCE           EARNED_AC130
+LANG_ENGLISH        "Press [{+actionslot 4}] for AC130 GUNSHIP."
+
+REFERENCE           EARNED_WOZ
+LANG_ENGLISH        "Press [{+actionslot 4}] for WOZ."
+
+REFERENCE           EARNED_NUKE
+LANG_ENGLISH        "Press [{+actionslot 4}] for TACTICAL NUKE."
+
+REFERENCE           RAMPAGE_NOT_AVAILABLE
+LANG_ENGLISH        "Rampage not available."
+
+REFERENCE           BLACKHAWK_NOT_AVAILABLE
+LANG_ENGLISH        "Blackhawk not available."
+
+REFERENCE           NAPALM_NOT_AVAILABLE
+LANG_ENGLISH        "Napalm Strike not available."
+
+REFERENCE           AC130_NOT_AVAILABLE
+LANG_ENGLISH        "AC130 gunship not available."
+
+REFERENCE           WOZ_NOT_AVAILABLE
+LANG_ENGLISH        "Wrath of Zod not available."
+
+REFERENCE           NUKE_NOT_AVAILABLE
+LANG_ENGLISH        "Tactical Nuke not available."
+
+REFERENCE           RAMPAGE_INBOUND
+LANG_ENGLISH        "^3&&1 ^7is on a ^1RAMPAGE"
+
+REFERENCE           BLACKHAWK_INBOUND
+LANG_ENGLISH        "Blackhawk support called in by &&1"
+
+REFERENCE           NAPALM_INBOUND
+LANG_ENGLISH        "Napalm Strike called in by &&1"
+
+REFERENCE           AC130_INBOUND
+LANG_ENGLISH        "AC 130 Gunship called in by &&1"
+
+REFERENCE           WOZ_INBOUND
+LANG_ENGLISH        "Wrath of Zod called in by &&1"
+
+REFERENCE           NUKE_INBOUND
+LANG_ENGLISH        "Tactical Nuke planted by &&1"
+
+REFERENCE           ELIM
+LANG_ENGLISH        "Elimination"
+
+REFERENCE           ELIM_SCORE
+LANG_ENGLISH        "Gain points by eliminating Zombies."
+
+REFERENCE           ELIM_HINT
+LANG_ENGLISH        "Eliminate the waves of Zombies!"
+
+REFERENCE           ONS
+LANG_ENGLISH        "Onslaught"
+
+REFERENCE           ONS_SCORE
+LANG_ENGLISH        "Gain points by destroying Zombies."
+
+REFERENCE           ONS_HINT
+LANG_ENGLISH        "Survive the Zombie onslaught!"
+
+REFERENCE           SUR
+LANG_ENGLISH        "Survival"
+
+REFERENCE           SUR_SCORE
+LANG_ENGLISH        "Gain points by destroying Zombies."
+
+REFERENCE           SUR_HINT
+LANG_ENGLISH        "Survive the waves of angry Zombies!"
+
+REFERENCE           CRASH_SNOW
+LANG_ENGLISH        "Crash Winter"
+
+REFERENCE           CTAN
+LANG_ENGLISH        "Carentan"
+
+REFERENCE           BROADCAST
+LANG_ENGLISH        "Broadcast"
+
+REFERENCE           CARENTAN
+LANG_ENGLISH        "Chinatown"
+
+REFERENCE           CREEK
+LANG_ENGLISH        "Creek"
+
+REFERENCE           KILLHOUSE
+LANG_ENGLISH        "Killhouse"
+
+REFERENCE           AERODROME
+LANG_ENGLISH        "Aerodrome"
+
+REFERENCE           AL_JABAL
+LANG_ENGLISH        "Al Jabal"
+
+REFERENCE           ANCIENT
+LANG_ENGLISH        "Ancient"
+
+REFERENCE           ASYLUM
+LANG_ENGLISH        "Asylum"
+
+REFERENCE           AVA_CROSSROADS
+LANG_ENGLISH        "The Crossroads"
+
+REFERENCE           BLAST
+LANG_ENGLISH        "Blast"
+
+REFERENCE           BRIDGE
+LANG_ENGLISH        "Bridge 1.3 Beta"
+
+REFERENCE           CASTLEWARS_V3
+LANG_ENGLISH        "Castle Wars"
+
+REFERENCE           DAYBREAK
+LANG_ENGLISH        "Daybreak"
+
+REFERENCE           FORLORN
+LANG_ENGLISH        "Forlorn"
+
+REFERENCE           HHK_BALLROOM
+LANG_ENGLISH        "Ballroom"
+
+REFERENCE           HIGHRISE
+LANG_ENGLISH        "Highrise"
+
+REFERENCE           KK_ARENA
+LANG_ENGLISH        "KK Arena"
+
+REFERENCE           LAUGH
+LANG_ENGLISH        "Laugh"
+
+REFERENCE           LPOST
+LANG_ENGLISH        "Listening Post"
+
+REFERENCE           PILLAR
+LANG_ENGLISH        "Pillar"
+
+REFERENCE           PRUNIS
+LANG_ENGLISH        "Prunis"
+
+REFERENCE           RUINS
+LANG_ENGLISH        "Ruins"
+
+REFERENCE           SBASE
+LANG_ENGLISH        "Sub Base"
+
+REFERENCE           SCRAP
+LANG_ENGLISH        "Scrap Yard"
+
+REFERENCE           SHIPMENT2
+LANG_ENGLISH        "Shipment II v1.0"
+
+REFERENCE           SIMPSONS
+LANG_ENGLISH        "Simpsons"
+
+REFERENCE           STARGATE_ABYDOS
+LANG_ENGLISH        "Stargate Abydos"
+
+REFERENCE           V2_B1
+LANG_ENGLISH        "V2 Beta 1"
+
+ENDMARKER
